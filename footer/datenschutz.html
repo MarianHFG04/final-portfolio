@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Datenschutz - Marian Portfolio</title>
+	<link rel="stylesheet" href="../styles/components.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<script src="../components/navigation.js"></script>
+	<script src="../components/footer.js"></script>
+	<style>
+		html,
+		body {
+			min-height: 100%;
+		}
+
+		body.datenschutz-layout {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background: var(--bg);
+		}
+
+		.datenschutz-main {
+			flex: 1;
+			width: min(var(--container-max), calc(100% - (2 * var(--page-grid-margin))));
+			margin: 0 auto;
+			padding-top: calc(130px + clamp(2rem, 3.5vw, 3rem));
+			padding-bottom: clamp(4rem, 6vw, 6rem);
+			display: grid;
+			grid-template-columns: repeat(12, minmax(0, 1fr));
+			column-gap: var(--page-grid-gutter);
+			row-gap: clamp(2rem, 2.8vw, 2.8rem);
+		}
+
+		.datenschutz-title {
+			grid-column: 1 / 13;
+			margin: 0;
+			color: var(--text);
+			font-size: clamp(2.4rem, 3.8vw, 3rem);
+			font-family: 'Syne', sans-serif;
+			font-weight: 800;
+			line-height: 0.95;
+		}
+
+		.datenschutz-section {
+			grid-column: 1 / 13;
+			display: grid;
+			row-gap: clamp(1rem, 1.6vw, 1.3rem);
+		}
+
+		.datenschutz-subtitle {
+			margin: 0;
+			color: var(--headline-accent);
+			font-size: clamp(1.6rem, 2.5vw, 2rem);
+			font-family: 'Inter', sans-serif;
+			font-weight: 700;
+		}
+
+		.datenschutz-text {
+			margin: 0;
+			color: var(--text);
+			font-size: clamp(1rem, 1.5vw, 1.25rem);
+			font-family: 'Inter', sans-serif;
+			font-weight: 400;
+			line-height: 1.4;
+		}
+
+		.datenschutz-text a {
+			color: inherit;
+			text-decoration: none;
+			overflow-wrap: anywhere;
+		}
+
+		.datenschutz-text a:hover {
+			opacity: 0.7;
+		}
+
+		app-footer {
+			display: block;
+			margin-top: auto;
+		}
+
+		@media (max-width: 1024px) {
+			.datenschutz-main {
+				width: min(var(--container-max), calc(100% - 96px));
+			}
+		}
+
+		@media (max-width: 768px) {
+			.datenschutz-main {
+				width: min(var(--container-max), calc(100% - 2.5rem));
+				padding-top: calc(32px + 2rem);
+				row-gap: 2rem;
+			}
+		}
+	</style>
+</head>
+<body class="datenschutz-layout">
+	<app-navigation></app-navigation>
+
+	<main class="page-shell datenschutz-main">
+		<h1 class="datenschutz-title">Datenschutz</h1>
+
+		<section class="datenschutz-section responsible">
+			<h2 class="datenschutz-subtitle">Verantwortlicher</h2>
+			<p class="datenschutz-text">
+				Marian Roth<br>
+				Hauptstraße 60, 73527 Schwäbisch Gmünd<br>
+				Email: marian.roth@hfg-gmuend.de
+			</p>
+		</section>
+
+		<section class="datenschutz-section hosting">
+			<h2 class="datenschutz-subtitle">Hosting über Github Pages</h2>
+			<p class="datenschutz-text">
+				Diese Website wird über GitHub Pages gehostet. Beim Aufruf der Website können durch GitHub technisch erforderliche Daten verarbeitet werden, insbesondere Server-Logfiles. Dazu können insbesondere die IP-Adresse, Datum und Uhrzeit des Zugriffs, Informationen zum verwendeten Browser und Betriebssystem sowie die aufgerufenen Seiten gehören.<br><br>
+				Die Verarbeitung erfolgt, um die Website technisch bereitzustellen und die Sicherheit und Stabilität des Angebots zu gewährleisten.<br><br>
+				Weitere Informationen zur Datenverarbeitung durch GitHub findest du in der Datenschutzerklärung von GitHub:<br>
+				<a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">https://docs.github.com/site-policy/privacy-policies/github-privacy-statement</a>
+			</p>
+		</section>
+
+		<section class="datenschutz-section contact">
+			<h2 class="datenschutz-subtitle">Kontaktaufnahme per Email</h2>
+			<p class="datenschutz-text">
+				Wenn du mich über das Kontaktformular kontaktierst, wird kein externer Formular-Dienst verwendet. Beim Absenden öffnet sich dein E-Mail-Programm über eine mailto-Verknüpfung.<br><br>
+				Wenn du mir anschließend eine E-Mail sendest, verarbeite ich die von dir übermittelten Daten ausschließlich zum Zweck der Bearbeitung deiner Anfrage und zur Kommunikation mit dir. Dies betrifft insbesondere deine E-Mail-Adresse sowie die Inhalte deiner Nachricht.<br><br>
+				Die Verarbeitung erfolgt nur, soweit dies zur Bearbeitung deiner Anfrage erforderlich ist.
+			</p>
+		</section>
+
+		<section class="datenschutz-section youtube">
+			<h2 class="datenschutz-subtitle">Youtube-Videos</h2>
+			<p class="datenschutz-text">
+				Auf dieser Website sind Videos von YouTube eingebettet. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br><br>
+				Beim Aufruf einer Seite mit eingebettetem YouTube-Video können personenbezogene Daten an YouTube bzw. Google übermittelt werden. Dies kann insbesondere dann geschehen, wenn das Video geladen oder abgespielt wird.<br><br>
+				Soweit möglich, werden eingebettete Videos im erweiterten Datenschutzmodus von YouTube verwendet. Dennoch kann nicht ausgeschlossen werden, dass beim Laden des Players Daten an YouTube oder Google übertragen werden.<br><br>
+				Weitere Informationen zur Datenverarbeitung durch YouTube und Google findest du hier:<br>
+				<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a><br>
+				<a href="https://support.google.com/youtube/answer/171780">https://support.google.com/youtube/answer/171780</a>
+			</p>
+		</section>
+
+		<section class="datenschutz-section links">
+			<h2 class="datenschutz-subtitle">Externe Links</h2>
+			<p class="datenschutz-text">
+				Diese Website enthält Links zu externen Websites Dritter. Für die Inhalte und Datenschutzpraktiken dieser externen Seiten bin ich nicht verantwortlich. Es gelten die Datenschutzbestimmungen der jeweiligen Anbieter.
+			</p>
+		</section>
+
+		<section class="datenschutz-section storage">
+			<h2 class="datenschutz-subtitle">Speicherdauer</h2>
+			<p class="datenschutz-text">
+				Personenbezogene Daten werden nur so lange gespeichert, wie dies für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
+			</p>
+		</section>
+
+		<section class="datenschutz-section rights">
+			<h2 class="datenschutz-subtitle">Deine Rechte</h2>
+			<p class="datenschutz-text">
+				Du hast nach der DSGVO das Recht auf:<br>
+				- Auskunft über deine gespeicherten personenbezogenen Daten<br>
+				- Berichtigung unrichtiger Daten<br>
+				- Löschung deiner Daten<br>
+				- Einschränkung der Verarbeitung<br>
+				- Widerspruch gegen die Verarbeitung<br>
+				- Datenübertragbarkeit, soweit anwendbar<br><br>
+				Außerdem hast du das Recht, dich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren.
+			</p>
+		</section>
+
+		<section class="datenschutz-section status">
+			<h2 class="datenschutz-subtitle">Stand</h2>
+			<p class="datenschutz-text">Stand: Juni 2026</p>
+		</section>
+	</main>
+
+	<app-footer></app-footer>
+
+	<script>
+		if ('scrollRestoration' in history) {
+			history.scrollRestoration = 'manual';
+		}
+
+		window.addEventListener('pageshow', () => {
+			window.scrollTo(0, 0);
+		});
+	</script>
+</body>
+</html>

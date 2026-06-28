@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:8000/index.html)",
+      "Bash(npm list *)",
+      "Bash(pkill -f \"python3 -m http.server\")",
+      "Bash(python3 -m http.server 8000)",
+      "Bash(find /Users/marianroth/Desktop -name \"index.html\" -type f 2>/dev/null)",
+      "Read(//Users/marianroth/Desktop/**)",
+      "Bash(pkill -9 -f \"python.*http.server\")",
+      "Bash(kill -9 7419)",
+      "Bash(curl -s \"http://localhost:8000/index.html\")"
+    ]
+  }
+}

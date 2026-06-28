@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Impressum - Marian Portfolio</title>
+	<link rel="stylesheet" href="../styles/components.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<script src="../components/navigation.js"></script>
+	<script src="../components/footer.js"></script>
+	<style>
+		html,
+		body {
+			height: 100%;
+		}
+
+		body.impressum-layout {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background: white;
+		}
+
+		.impressum-main {
+			position: relative;
+			flex: 1;
+			min-height: 0;
+		}
+
+		.impressum-title {
+			position: absolute;
+			left: 120px;
+			top: 160px;
+			color: black;
+			font-size: 48px;
+			font-family: 'Syne', sans-serif;
+			font-weight: 800;
+		}
+
+		.impressum-subtitle {
+			position: absolute;
+			left: 120px;
+			color: #658553;
+			font-size: 32px;
+			font-family: 'Inter', sans-serif;
+			font-weight: 700;
+		}
+
+		.impressum-subtitle.address {
+			top: 268px;
+		}
+
+		.impressum-subtitle.contact {
+			top: 536px;
+		}
+
+		.impressum-text {
+			position: absolute;
+			left: 120px;
+			color: black;
+			font-size: 20px;
+			font-family: 'Inter', sans-serif;
+			font-weight: 400;
+			line-height: 1.45;
+		}
+
+		.impressum-text.address {
+			top: 332px;
+		}
+
+		.impressum-text.contact {
+			top: 600px;
+		}
+
+		app-footer {
+			display: block;
+			margin-top: auto;
+		}
+	</style>
+</head>
+<body class="impressum-layout">
+	<app-navigation></app-navigation>
+
+	<main class="impressum-main">
+		<h1 class="impressum-title">Impressum</h1>
+		<h2 class="impressum-subtitle address">Name und Adresse</h2>
+		<h2 class="impressum-subtitle contact">Kontakt</h2>
+
+		<p class="impressum-text address">
+			Marian Roth<br><br>
+			Hauptstraße 60<br><br>
+			73527, Schwäbisch Gmünd
+		</p>
+
+		<p class="impressum-text contact">Email: marian.roth@hfg-gmuend.de</p>
+	</main>
+
+	<app-footer></app-footer>
+</body>
+</html>

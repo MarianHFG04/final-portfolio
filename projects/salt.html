@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Salt. - Marian Portfolio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500;600&family=Bricolage+Grotesque:wght@400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/components.css">
+	<link rel="stylesheet" href="../styles/projects.css">
+	<script src="../components/navigation.js"></script>
+	<script src="../components/related-projects.js"></script>
+	<script src="../components/footer.js"></script>
+</head>
+<body class="project-page-salt show-grid">
+	<div class="grid-debug" aria-hidden="true">
+		<span></span><span></span><span></span><span></span><span></span><span></span>
+		<span></span><span></span><span></span><span></span><span></span><span></span>
+	</div>
+	<app-navigation></app-navigation>
+
+	<main class="page-shell">
+		<div class="content-container salt-layout">
+
+			<!-- Hero -->
+			<section class="section salt-hero" aria-labelledby="salt-title">
+				<div class="salt-hero-left">
+					<div class="salt-copy">
+						<p class="salt-meta">
+							<span>Mechatronics Workshop</span>
+							<span>Physical Prototype</span>
+						</p>
+						<h1 id="salt-title" class="salt-title">Salt.</h1>
+						<p class="salt-lead">
+							Im Rahmen des Mechatronik-Workshops entwickelten wir ein Ger&auml;t, das eine Salzm&uuml;hle bedient.
+							Ausgangspunkt war die Beobachtung der menschlichen Drehbewegung beim W&uuml;rzen. Unser Ziel war
+							nicht Effizienz, sondern die m&ouml;glichst authentische Nachahmung dieser Bewegung.
+						</p>
+					</div>
+
+					<div class="salt-info-wrap">
+						<div class="salt-info-labels" aria-hidden="true">
+							<span>Rolle</span>
+							<span>Zeitraum</span>
+							<span>Tools</span>
+						</div>
+						<div class="salt-info-values">
+							<p>Concept, Prototyping, Construction, Programming</p>
+							<p>1 Week Workshop &middot; SoSe 2026</p>
+							<p>Arduino, Stepper Motor, Prototyping, Adobe Illustrator</p>
+						</div>
+					</div>
+				</div>
+
+				<figure class="salt-hero-main-img">
+					<img src="../assets/images/Bildschirmfoto 2026-05-23 um 01.37.42 1.png" alt="Salt-Prototyp mit Teller und Salzmühle, Frontansicht">
+				</figure>
+
+				<figure class="salt-hero-secondary-img">
+					<img src="../assets/images/Bildschirmfoto 2026-05-23 um 01.37.10 1.png" alt="Elektronik und Stepper-Motor Detail">
+				</figure>
+			</section>
+
+			<!-- Challenge -->
+			<section class="section salt-challenge" aria-labelledby="challenge-title">
+				<h2 id="challenge-title" class="salt-section-title">Herausforderung</h2>
+				<p class="salt-body">
+					Im Rahmen des Mechatronik-Workshops entwickelten wir ein Ger&auml;t, das eine Salzm&uuml;hle bedient.
+					Ausgangspunkt war die Beobachtung der menschlichen Drehbewegung beim W&uuml;rzen. Unser Ziel war
+					nicht Effizienz, sondern die m&ouml;glichst authentische Nachahmung dieser Bewegung.
+				</p>
+			</section>
+
+			<!-- Exploration -->
+			<section class="section salt-exploration" aria-labelledby="exploration-title">
+				<h2 id="exploration-title" class="salt-section-title">Erkundung</h2>
+				<p class="salt-body">
+					Zu Beginn haben wir verschiedene Ans&auml;tze skizziert und einen ersten Prototypen aus Pappe gebaut,
+					um Proportionen, Aufbau und Funktionsprinzip schnell zu testen. Dabei zeigte sich fr&uuml;h, dass der
+					erste Greifmechanismus die M&uuml;hle nicht stabil genug fixierte und in der Form weiterentwickelt
+					werden musste.
+				</p>
+				<figure class="salt-exploration-sketches">
+					<img src="../assets/images/Salt/Sketches.png" alt="Skizzen verschiedener Ansätze für den Greifmechanismus">
+				</figure>
+
+				<figure class="salt-exploration-proto1">
+					<img src="../assets/images/Salt/Prototype1.png" alt="Erster Pappprototyp des Greifmechanismus">
+				</figure>
+				<figure class="salt-exploration-proto2">
+					<img src="../assets/images/Salt/Prototype2.png" alt="Weiterentwickelter Prototyp mit Greifarm">
+				</figure>
+			</section>
+
+			<!-- Making Process -->
+			<section class="section salt-making" aria-labelledby="making-title">
+				<h2 id="making-title" class="salt-section-title">Arbeitsprozess</h2>
+				<p class="salt-body">
+					Im weiteren Verlauf lag der Fokus auf der technischen und konstruktiven Umsetzung. Die gr&ouml;&szlig;te
+					Herausforderung war, gen&uuml;gend Kraft f&uuml;r die Drehbewegung zu erzeugen und gleichzeitig eine
+					stabile Halterung f&uuml;r die M&uuml;hle zu entwickeln. Durch mehrere Anpassungen an Greifmechanismus,
+					Aufbau und Programmierung konnten wir einen funktionierenden Prototypen realisieren, der die
+					Bewegung bewusst leicht ungenau und dadurch menschlicher nachahmt.
+				</p>
+
+				<figure class="salt-making-media">
+					<img src="../assets/images/Salt/Work.png" alt="Team beim Aufbau und Löten des Prototypen">
+				</figure>
+			</section>
+
+			<!-- Final Prototype -->
+			<section class="section salt-final" aria-labelledby="final-title">
+				<h2 id="final-title" class="salt-section-title">Finaler Prototyp</h2>
+				<p class="salt-body">
+					Das Ergebnis ist ein mechatronischer Prototyp, der eine Salzm&uuml;hle per Knopfdruck in einer
+					menschenähnlichen Bewegung bedient. Auch wenn das System technisch noch nicht perfekt war, konnte
+					die Grundidee &uuml;berzeugend umgesetzt und im Ausstellungskontext pr&auml;sentiert werden. Der Workshop
+					hat vor allem gezeigt, wie wichtig fr&uuml;he Tests und pragmatische Entscheidungen sind, um in kurzer
+					Zeit von einer Idee zu einem funktionierenden Objekt zu gelangen.
+				</p>
+
+				<div class="salt-final-showcase">
+					<figure class="salt-final-image">
+						<img src="../assets/images/Salt/Final.png" alt="Finaler Salt-Prototyp in der Gesamtansicht">
+					</figure>
+					<div class="salt-final-video" aria-label="YouTube Video zum Salt-Prototypen">
+						<iframe
+							src="https://www.youtube.com/embed/6xXzGeT6_pc"
+							title="Salt Prototyp Video"
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+						></iframe>
+					</div>
+				</div>
+			</section>
+
+		</div>
+	</main>
+
+	<related-projects current="salt"></related-projects>
+	<app-footer></app-footer>
+</body>
+</html>
