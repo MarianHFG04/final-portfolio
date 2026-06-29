@@ -140,14 +140,26 @@
                 </header>
 
                 <div class="about-grid">
-                    <figure class="about-media about-media-main">
-                        <img src="assets/images/image-70.png" alt="Portrait von Marian">
-                    </figure>
+                    <div class="about-gallery-panel" data-about-carousel>
+                        <button class="about-carousel-button is-prev" type="button" aria-label="Vorheriges Bild">
+                            <span aria-hidden="true">&#8249;</span>
+                        </button>
+                        <div class="about-gallery-viewport">
+                            <img
+                                class="about-gallery-image"
+                                src="assets/images/Aboutme/Gym.png"
+                                alt="Marian beim Sport im Gym"
+                            >
+                        </div>
+                        <button class="about-carousel-button is-next" type="button" aria-label="Nächstes Bild">
+                            <span aria-hidden="true">&#8250;</span>
+                        </button>
+                    </div>
 
                     <div class="about-copy">
                         <h3 class="about-headline">
                             <span class="greeting-line">Hi, ich bin</span>
-                            <span class="accent name-line">- Marian</span>
+                            <span class="accent name-line">Marian -</span>
                         </h3>
                         <p>
                             Ich studiere Interaktionsgestaltung im 4. Semester an der HfG Schw&auml;bisch Gm&uuml;nd. In meinen
@@ -155,8 +167,13 @@
                             zusammenkommen.
                         </p>
                         <p>
-                            Neben dem Design spiele ich gerne mit kreativen Ideen und sch&auml;tze Sport als festen Ausgleich.
-                            Diese Mischung aus Kreativit&auml;t, Struktur und Disziplin pr&auml;gt auch meine Arbeitsweise.
+                            Neben meinem Studium bietet mir vor allem der Sport die M&ouml;glichkeit, mich auszupowern und 
+                            den Kopf frei zu bekommen. Routine, Disziplin und Ausdauer bringen mich dabei voran und sind auch
+                            in vielen anderen Bereichen meines Lebens wichtige Eigenschaften.
+                        </p>
+                        <p>
+                            Au&szlig;erdem liebe ich das Reisen. Kaum eine andere Erfahrung gibt mir so ein Gefühl von Freiheit und Unabhängigkeit, 
+                            wie das Erkunden neuer Orte und Kulturen. Ich genieße es, neue Perspektiven zu gewinnen und meinen Horizont zu erweitern.
                         </p>
                     </div>
                 </div>
@@ -218,6 +235,73 @@
 
             window.location.href = 'mailto:marian.roth@hfg-gmuend.de?subject=' + subject + '&body=' + body;
         });
+
+        /* About Gallery Carousel */
+        (() => {
+            const carousel = document.querySelector("[data-about-carousel]");
+            if (!carousel) {
+                return;
+            }
+
+            const image = carousel.querySelector(".about-gallery-image");
+            const previousButton = carousel.querySelector(".about-carousel-button.is-prev");
+            const nextButton = carousel.querySelector(".about-carousel-button.is-next");
+            const slides = [
+                {
+                    src: "assets/images/Aboutme/Gym.png",
+                    alt: "Marian beim Sport im Gym",
+                    width: 1920,
+                    height: 1280
+                },
+                {
+                    src: "assets/images/Aboutme/Norwegen.png",
+                    alt: "Reiseabenteuer in Norwegen",
+                    width: 1920,
+                    height: 1280
+                },
+                {
+                    src: "assets/images/Aboutme/Outfit.JPG",
+                    alt: "Outfit und persönlicher Stil",
+                    width: 1920,
+                    height: 1920
+                },
+                {
+                    src: "assets/images/Aboutme/Party.JPG",
+                    alt: "Freizeit und Freunde",
+                    width: 1920,
+                    height: 1920
+                },
+                {
+                    src: "assets/images/Aboutme/Thailand.png",
+                    alt: "Abenteuer und Reisen in Thailand",
+                    width: 1920,
+                    height: 1280
+                }
+            ];
+
+            let currentIndex = 0;
+
+            const updateImage = () => {
+                const slide = slides[currentIndex];
+                image.src = slide.src;
+                image.alt = slide.alt;
+            };
+
+            const showNext = () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateImage();
+            };
+
+            const showPrevious = () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateImage();
+            };
+
+            nextButton.addEventListener('click', showNext);
+            previousButton.addEventListener('click', showPrevious);
+
+            updateImage();
+        })();
     </script>
  </body>
  </html>
