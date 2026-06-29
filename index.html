@@ -141,7 +141,8 @@
 
                 <div class="about-grid">
                     <div class="about-gallery-slideshow" data-about-slideshow>
-                        <img class="about-gallery-image" src="assets/images/Aboutme/Gym.png" alt="Marian beim Sport im Gym">
+                        <img class="about-gallery-image about-gallery-current" src="assets/images/Aboutme/Gym.png" alt="Marian beim Sport im Gym">
+                        <img class="about-gallery-image about-gallery-next" src="assets/images/Aboutme/Norwegen.png" alt="Reiseabenteuer in Norwegen">
                     </div>
 
                     <div class="about-copy">
@@ -224,7 +225,7 @@
             window.location.href = 'mailto:marian.roth@hfg-gmuend.de?subject=' + subject + '&body=' + body;
         });
 
-        /* About Gallery Auto-Play Slideshow */
+        /* About Gallery Auto-Play Slideshow with Cross-Fade */
         (() => {
             const slideshow = document.querySelector("[data-about-slideshow]");
             if (!slideshow) {
@@ -248,23 +249,32 @@
             ];
 
             let currentIndex = 0;
-            const img = slideshow.querySelector(".about-gallery-image");
+            const currentImg = slideshow.querySelector(".about-gallery-current");
+            const nextImg = slideshow.querySelector(".about-gallery-next");
 
             const transitionToNextImage = () => {
-                // Add fade-out class
-                img.classList.add("fade-out");
+                // Prepare next image
+                const nextIndex = (currentIndex + 1) % images.length;
+                nextImg.src = images[nextIndex];
+                nextImg.alt = alts[nextIndex];
 
-                // After fade completes, change image and fade in
+                // Trigger fade transition
+                currentImg.classList.add("fade-out");
+                nextImg.classList.add("fade-in");
+
+                // After transition completes, swap roles
                 setTimeout(() => {
-                    currentIndex = (currentIndex + 1) % images.length;
-                    img.src = images[currentIndex];
-                    img.alt = alts[currentIndex];
-                    img.classList.remove("fade-out");
-                }, 1000);
+                    currentIndex = nextIndex;
+                    currentImg.src = images[currentIndex];
+                    currentImg.alt = alts[currentIndex];
+                    currentImg.classList.remove("fade-out");
+                    nextImg.classList.remove("fade-in");
+                    nextImg.style.opacity = "0";
+                }, 1200);
             };
 
-            // Change image every 3 seconds
-            setInterval(transitionToNextImage, 3000);
+            // Change image every 4 seconds
+            setInterval(transitionToNextImage, 4000);
         })();
     </script>
  </body>

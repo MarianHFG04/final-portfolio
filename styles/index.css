@@ -394,12 +394,27 @@ body.home-page.show-grid .grid-debug span {
 	position: absolute;
 	top: 0;
 	left: 0;
-	opacity: 1;
-	transition: opacity 1s ease-in-out;
+	transition: opacity 1.2s ease-in-out;
 }
 
-.about-gallery-image.fade-out {
+.about-gallery-current {
+	opacity: 1;
+	z-index: 2;
+}
+
+.about-gallery-next {
 	opacity: 0;
+	z-index: 1;
+}
+
+.about-gallery-current.fade-out {
+	opacity: 0;
+	z-index: 1;
+}
+
+.about-gallery-next.fade-in {
+	opacity: 1;
+	z-index: 2;
 }
 
 .contact {
