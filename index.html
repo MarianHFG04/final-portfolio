@@ -140,20 +140,8 @@
                 </header>
 
                 <div class="about-grid">
-                    <div class="about-gallery-panel" data-about-carousel>
-                        <button class="about-carousel-button is-prev" type="button" aria-label="Vorheriges Bild">
-                            <span aria-hidden="true">&#8249;</span>
-                        </button>
-                        <div class="about-gallery-viewport">
-                            <img
-                                class="about-gallery-image"
-                                src="assets/images/Aboutme/Gym.png"
-                                alt="Marian beim Sport im Gym"
-                            >
-                        </div>
-                        <button class="about-carousel-button is-next" type="button" aria-label="Nächstes Bild">
-                            <span aria-hidden="true">&#8250;</span>
-                        </button>
+                    <div class="about-gallery-slideshow" data-about-slideshow>
+                        <img class="about-gallery-image" src="assets/images/Aboutme/Gym.png" alt="Marian beim Sport im Gym">
                     </div>
 
                     <div class="about-copy">
@@ -236,71 +224,47 @@
             window.location.href = 'mailto:marian.roth@hfg-gmuend.de?subject=' + subject + '&body=' + body;
         });
 
-        /* About Gallery Carousel */
+        /* About Gallery Auto-Play Slideshow */
         (() => {
-            const carousel = document.querySelector("[data-about-carousel]");
-            if (!carousel) {
+            const slideshow = document.querySelector("[data-about-slideshow]");
+            if (!slideshow) {
                 return;
             }
 
-            const image = carousel.querySelector(".about-gallery-image");
-            const previousButton = carousel.querySelector(".about-carousel-button.is-prev");
-            const nextButton = carousel.querySelector(".about-carousel-button.is-next");
-            const slides = [
-                {
-                    src: "assets/images/Aboutme/Gym.png",
-                    alt: "Marian beim Sport im Gym",
-                    width: 1920,
-                    height: 1280
-                },
-                {
-                    src: "assets/images/Aboutme/Norwegen.png",
-                    alt: "Reiseabenteuer in Norwegen",
-                    width: 1920,
-                    height: 1280
-                },
-                {
-                    src: "assets/images/Aboutme/Outfit.JPG",
-                    alt: "Outfit und persönlicher Stil",
-                    width: 1920,
-                    height: 1920
-                },
-                {
-                    src: "assets/images/Aboutme/Party.JPG",
-                    alt: "Freizeit und Freunde",
-                    width: 1920,
-                    height: 1920
-                },
-                {
-                    src: "assets/images/Aboutme/Thailand.png",
-                    alt: "Abenteuer und Reisen in Thailand",
-                    width: 1920,
-                    height: 1280
-                }
+            const images = [
+                "assets/images/Aboutme/Gym.png",
+                "assets/images/Aboutme/Norwegen.png",
+                "assets/images/Aboutme/Outfit.png",
+                "assets/images/Aboutme/Party.png",
+                "assets/images/Aboutme/Thailand.png"
+            ];
+
+            const alts = [
+                "Marian beim Sport im Gym",
+                "Reiseabenteuer in Norwegen",
+                "Outfit und persönlicher Stil",
+                "Freizeit und Freunde",
+                "Abenteuer und Reisen in Thailand"
             ];
 
             let currentIndex = 0;
+            const img = slideshow.querySelector(".about-gallery-image");
 
-            const updateImage = () => {
-                const slide = slides[currentIndex];
-                image.src = slide.src;
-                image.alt = slide.alt;
+            const transitionToNextImage = () => {
+                // Add fade-out class
+                img.classList.add("fade-out");
+
+                // After fade completes, change image and fade in
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    img.src = images[currentIndex];
+                    img.alt = alts[currentIndex];
+                    img.classList.remove("fade-out");
+                }, 1000);
             };
 
-            const showNext = () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateImage();
-            };
-
-            const showPrevious = () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateImage();
-            };
-
-            nextButton.addEventListener('click', showNext);
-            previousButton.addEventListener('click', showPrevious);
-
-            updateImage();
+            // Change image every 3 seconds
+            setInterval(transitionToNextImage, 3000);
         })();
     </script>
  </body>
